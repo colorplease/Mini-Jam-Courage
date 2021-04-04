@@ -10,11 +10,17 @@ public class Enemy : MonoBehaviour
     public Timing timing1;
 
     public Animator shakea;
+
+   
     // Start is called before the first frame update
     void Start()
     {
         timing1 = GameObject.FindObjectOfType<Timing>();
+   
+      
     }
+
+
 
     // Update is called once per frame
     void Update()

@@ -6,6 +6,7 @@ public class Test : MonoBehaviour
 {
 
     public AudioSource audioSource;
+    public Timing timing1;
 
     
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class Test : MonoBehaviour
       audioSource = GetComponent<AudioSource>();
       Time.timeScale = 1f;
       audioSource.pitch = 1f;
+    timing1 = GameObject.FindObjectOfType<Timing>();
 
     }
 
@@ -24,6 +26,7 @@ public class Test : MonoBehaviour
         {
         Time.timeScale += 0.05f;
         audioSource.pitch += 0.05f; 
+        timing1.speed += 0.05f;
         audioSource.Play();
     }
 

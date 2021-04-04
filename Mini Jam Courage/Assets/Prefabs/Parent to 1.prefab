@@ -188,8 +188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owned: {fileID: 1316877110685553056, guid: 3f3a60fa76c36c74183c9c303887486e, type: 3}
-  timing1: {fileID: 0}
-  mm1: {fileID: 0}
+  timing1: {fileID: 4126718141436158218, guid: a10268c979a8359459db33649a1590f6, type: 3}
+  shakea: {fileID: 0}
+  audioSource: {fileID: 8554095457384199506, guid: 54cc4f8b675e18445bc5683367ea5ab8, type: 3}
+  drum: {fileID: 8300000, guid: 1f278c75905c56242b2f691c23884dfe, type: 3}
 --- !u!50 &1073677713554032224
 Rigidbody2D:
   serializedVersion: 4

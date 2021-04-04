@@ -12,6 +12,10 @@ public class Timing : MonoBehaviour
     public bool pressed1 = false;
     public bool dmg = false;
 
+    public bool playHit = false;
+
+    public float speed = 1f;
+
 
 
     public Timing timing;
@@ -22,11 +26,15 @@ public class Timing : MonoBehaviour
     public Animator shakea;
 
     public Animator man;
+
+     public AudioSource audioSource;
+
+    public AudioClip pog;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -36,6 +44,7 @@ public class Timing : MonoBehaviour
         {
             pressed = true;
             Scythe.SetBool("pressleft", true);
+             audioSource.PlayOneShot(pog);
             
         }
 
@@ -43,16 +52,20 @@ public class Timing : MonoBehaviour
         {
             pressed1 = true;
             Scythe.SetBool("pressright", true);
+             audioSource.PlayOneShot(pog);
         }
 
         if (pressed == true)
         {
             StartCoroutine("Cool");
+            playHit = true;
+            
         }
 
         if (pressed1 == true)
         {
             StartCoroutine("Cool2");
+            playHit = true;
         }
 
         if (Ace == true)
@@ -76,6 +89,12 @@ public class Timing : MonoBehaviour
                StartCoroutine("beatisnon1");
             dmg = false;
         }
+
+        if (playHit == true)
+        {
+           
+            
+        } 
     }
 
     IEnumerator Cool()
@@ -111,6 +130,8 @@ public class Timing : MonoBehaviour
         man.SetBool("hit", false);
         
     }
+
+    
 
     void OnTriggerStay2D(Collider2D other)
     {

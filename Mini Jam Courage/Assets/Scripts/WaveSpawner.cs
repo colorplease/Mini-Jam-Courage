@@ -25,9 +25,15 @@ public class WaveSpawner : MonoBehaviour
 
    private float nextSpawnTime;
 
-   private float nextTimeBtwWave;
+   public float nextTimeBtwWave;
 
-   public bool godfuckingdamnit;
+   public bool godfuckingdamnit = false;
+
+    public AudioSource audioSource;
+
+    public AudioClip drum;
+
+    public Timing timing1;
 
    
 void SpawnWave()
@@ -38,6 +44,7 @@ void SpawnWave()
     Instantiate(Enemy, spawnPoints.position, Quaternion.identity);
     currentWave.NoOfEnemies--;
     nextSpawnTime = Time.time + currentWave.spawnInterval;
+    StartCoroutine("poggers");
     if(currentWave.NoOfEnemies == 0)
     {
          canSpawn = false;
@@ -45,12 +52,7 @@ void SpawnWave()
          
     }
 
-    if (nextTimeBtwWave < Time.time)
-    {
-       
-        currentWaveNumber++;
-        canSpawn = true;
-    }
+   
     }
     
 }
@@ -59,18 +61,44 @@ void Update()
 {
     SpawnWave();
 
-    if (godfuckingdamnit == true)
+
+    
+
+    if (!canSpawn && godfuckingdamnit == true)
     {
-        nextTimeBtwWave = Time.time + currentWave.timeBtwWave;
-        godfuckingdamnit = false;
+        nextTimeBtwWave = currentWave.timeBtwWave -= Time.deltaTime * timing1.speed;
+        Debug.Log("AAAAA");
+
     }
-   
+
+    Debug.Log(currentWaveNumber);
+    if (nextTimeBtwWave < 0 && !canSpawn)
+    {
+
+        godfuckingdamnit = false;
+        nextTimeBtwWave = currentWave.timeBtwWave;
+        currentWaveNumber++;
+        canSpawn = true;
+        
+    
+    }
+
+    currentWave = waves[currentWaveNumber];
 
 }
 
 void Start()
 {
     currentWave = waves[currentWaveNumber];
+    nextTimeBtwWave = currentWave.timeBtwWave;
+    timing1 = GameObject.FindObjectOfType<Timing>();
+
+}
+
+IEnumerator poggers()
+{
+       yield return new WaitForSeconds(0.01f);
+       audioSource.PlayOneShot(drum);
 }
 
         
