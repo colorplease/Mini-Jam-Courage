@@ -11,6 +11,8 @@ public class Wave1
     public float spawnInterval;
 
     public float timeBtwWave;
+
+    public float speed3;
 }
 
 public class WaveSpawner1 : MonoBehaviour
@@ -34,6 +36,8 @@ public class WaveSpawner1 : MonoBehaviour
     public AudioClip drum;
 
     public Timing timing1;
+
+    public Animator helpme;
 
    
 void SpawnWave()
@@ -85,6 +89,7 @@ void Update()
 
     currentWave = waves[currentWaveNumber];
 
+      timing1.speed2 = currentWave.speed3;
 }
 
 void Start()
@@ -92,6 +97,7 @@ void Start()
     currentWave = waves[currentWaveNumber];
     nextTimeBtwWave = currentWave.timeBtwWave;
     timing1 = GameObject.FindObjectOfType<Timing>();
+   
 
 }
 

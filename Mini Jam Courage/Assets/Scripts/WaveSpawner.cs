@@ -11,6 +11,10 @@ public class Wave
     public float spawnInterval;
 
     public float timeBtwWave;
+
+    public float speed3;
+
+    
 }
 
 public class WaveSpawner : MonoBehaviour
@@ -34,6 +38,8 @@ public class WaveSpawner : MonoBehaviour
     public AudioClip drum;
 
     public Timing timing1;
+
+    public Animator helpme;
 
    
 void SpawnWave()
@@ -67,11 +73,11 @@ void Update()
     if (!canSpawn && godfuckingdamnit == true)
     {
         nextTimeBtwWave = currentWave.timeBtwWave -= Time.deltaTime * timing1.speed;
-        Debug.Log("AAAAA");
+
 
     }
 
-    Debug.Log(currentWaveNumber);
+   
     if (nextTimeBtwWave < 0 && !canSpawn)
     {
 
@@ -84,6 +90,8 @@ void Update()
     }
 
     currentWave = waves[currentWaveNumber];
+
+    timing1.speed2 = currentWave.speed3;
 
 }
 

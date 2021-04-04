@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timing : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Timing : MonoBehaviour
 
 
     public float speed = 1f;
+    public float speed2 = 1f;
 
 
 
@@ -39,6 +41,12 @@ public class Timing : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+      
+    }
+
+    void Awake()
+    {
+          
     }
 
     // Update is called once per frame
@@ -72,19 +80,7 @@ public class Timing : MonoBehaviour
             playHit = true;
         }
 
-        if (Ace1 == true)
-        {
-        
-
-            
-            
-         
-            
-        }
-        else
-        {
-            
-        }
+       
 
         if (dmg == true)
         {
@@ -95,11 +91,11 @@ public class Timing : MonoBehaviour
             dmg = false;
         }
 
-        if (playHit == true)
+       
+        if(Input.GetKeyDown("r"))
         {
-           
-            
-        } 
+            SceneManager.LoadScene(0);
+        }
     }
 
     IEnumerator Cool()
