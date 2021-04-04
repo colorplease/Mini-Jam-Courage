@@ -52,9 +52,9 @@ public class Timing : MonoBehaviour
 
         if (Ace == true)
         {
-            Ace = false;
             
-            Debug.Log("Sans");
+            
+            
          
             
         }
@@ -82,6 +82,16 @@ public class Timing : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         pressed1 = false;
         Scythe.SetBool("pressright", false);
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Enemy" && pressed == true)
+        {
+           Ace = true;
+        }
+
+         
     }
 
     

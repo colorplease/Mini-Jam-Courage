@@ -5,21 +5,28 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 
-    public Timing timing2;
-    public GameObject me;
+    public AudioSource audioSource;
+
+    
     // Start is called before the first frame update
     void Start()
     {
-        me.SetActive(false);
+      audioSource = GetComponent<AudioSource>();
+      Time.timeScale = 1f;
+      audioSource.pitch = 1f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timing2.Ace == true)
+        if (!audioSource.isPlaying)
         {
-            me.SetActive(true);
-            Debug.Log("ans");
-        }
+        Time.timeScale += 0.05f;
+        audioSource.pitch += 0.05f; 
+        audioSource.Play();
     }
-}
+
+    }
+    }
+
