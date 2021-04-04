@@ -16,6 +16,9 @@ public class Test : MonoBehaviour
       Time.timeScale = 1f;
       audioSource.pitch = 1f;
     timing1 = GameObject.FindObjectOfType<Timing>();
+    
+    Time.timeScale = 0.95f;
+    audioSource.pitch = 0.95f;
 
     }
 
@@ -24,7 +27,7 @@ public class Test : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
-        Time.timeScale += 0.05f;
+        Time.timeScale += 0.04f;
         audioSource.pitch += 0.05f; 
         timing1.speed += 0.05f;
         audioSource.Play();
