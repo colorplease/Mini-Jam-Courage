@@ -10,17 +10,16 @@ public class Menu : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(gamers());
-       
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
-
-    public void OptionsEnter()
+    
+    public void RetryGame()
     {
-
+        StartCoroutine(gaming());
     }
 
     IEnumerator gamers()
@@ -28,5 +27,12 @@ public class Menu : MonoBehaviour
         animator.SetBool("audio", true);
         yield return new WaitForSeconds(2f);
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    IEnumerator gaming()
+    {
+        animator.SetBool("audio", true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }

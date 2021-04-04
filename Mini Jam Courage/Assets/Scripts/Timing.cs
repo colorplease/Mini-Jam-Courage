@@ -18,14 +18,12 @@ public class Timing : MonoBehaviour
     public bool playHit = false;
 
 
-
     public float speed = 1f;
     public float speed2 = 1f;
 
-
+    public Lives lives;
 
     public Timing timing;
-
 
 
     public Animator Scythe;
@@ -41,9 +39,15 @@ public class Timing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         Application.targetFrameRate = 70;
    
       
+=======
+        Application.targetFrameRate = 60;
+
+        lives = GameObject.Find("Lives").GetComponent<Lives>();
+>>>>>>> Stashed changes
     }
 
     void Awake()
@@ -90,7 +94,11 @@ public class Timing : MonoBehaviour
             man.SetBool("hit", true);
             StartCoroutine("beatisnon");
                StartCoroutine("beatisnon1");
+<<<<<<< Updated upstream
                audioSource.PlayOneShot(sans);
+=======
+            lives.livesAmount--;
+>>>>>>> Stashed changes
             dmg = false;
         }
 
@@ -141,10 +149,7 @@ public class Timing : MonoBehaviour
         
     }
 
-   
 
-
-    
 
     void OnTriggerStay2D(Collider2D other)
     {
