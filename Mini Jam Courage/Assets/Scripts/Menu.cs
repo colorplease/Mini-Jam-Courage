@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+
+    public Animator animator;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        StartCoroutine(gamers());
+       
     }
 
     public void QuitGame()
@@ -18,5 +21,12 @@ public class Menu : MonoBehaviour
     public void OptionsEnter()
     {
 
+    }
+
+    IEnumerator gamers()
+    {
+        animator.SetBool("audio", true);
+        yield return new WaitForSeconds(2f);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
