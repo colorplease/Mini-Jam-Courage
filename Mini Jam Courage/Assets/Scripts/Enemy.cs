@@ -25,14 +25,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timing1.Ace == true)
-        {
-          GameObject effect = Instantiate(owned, transform.position, Quaternion.identity);
-          Destroy(effect , 5f);
-          Destroy(gameObject);
-          Debug.Log("dude");
-          timing1.Ace = false;
-        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -42,7 +35,30 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
            timing1.dmg = true;
         }
+
+        if (other.tag == "good god")
+        {
+            timing1.Ace = false;
+        }
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "good god")
+        {
+            if (timing1.Ace == true)
+        {
+          GameObject effect = Instantiate(owned, transform.position, Quaternion.identity);
+          Destroy(effect , 5f);
+          Destroy(gameObject);
+          Debug.Log("dude");
+          timing1.Ace = false;
+  
+        }
+        }
+      
+    }
+
 
     
 

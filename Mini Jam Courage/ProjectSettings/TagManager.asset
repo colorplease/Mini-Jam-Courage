@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Detec
   - Enemy
+  - good god
   layers:
   - Default
   - TransparentFX

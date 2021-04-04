@@ -8,11 +8,15 @@ public class Timing : MonoBehaviour
     public bool Late = false;
     public bool Ace = false;
 
+    public bool Ace1 = false;
+
     public bool pressed = false;
     public bool pressed1 = false;
     public bool dmg = false;
 
     public bool playHit = false;
+
+
 
     public float speed = 1f;
 
@@ -68,9 +72,10 @@ public class Timing : MonoBehaviour
             playHit = true;
         }
 
-        if (Ace == true)
+        if (Ace1 == true)
         {
-            
+        
+
             
             
          
@@ -110,6 +115,12 @@ public class Timing : MonoBehaviour
         Ace = false;
     }
 
+     IEnumerator Cool69()
+    {
+        yield return new WaitForSeconds(0.05f);
+        Ace1 = false;
+    }
+
     IEnumerator Cool2()
     {
         yield return new WaitForSeconds(0.05f);
@@ -140,6 +151,12 @@ public class Timing : MonoBehaviour
            Ace = true;
         }
 
+        if (other.tag == "Enemy" && pressed1 == true)
+        {
+            Ace1 = true;
+        }
+
+        
          
     }
 
