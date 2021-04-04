@@ -1811,7 +1811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4508645636753579161, guid: cb3b10f59d7a4f94697d7419ec3e06ae, type: 3}
       propertyPath: waves.Array.data[17].timeBtwWave
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 4508645636753579161, guid: cb3b10f59d7a4f94697d7419ec3e06ae, type: 3}
       propertyPath: waves.Array.data[18].NoOfEnemies
@@ -1819,7 +1819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4508645636753579161, guid: cb3b10f59d7a4f94697d7419ec3e06ae, type: 3}
       propertyPath: waves.Array.data[18].timeBtwWave
-      value: 1
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 4508645636753579161, guid: cb3b10f59d7a4f94697d7419ec3e06ae, type: 3}
       propertyPath: waves.Array.data[19].NoOfEnemies
@@ -1903,7 +1903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4508645636753579161, guid: cb3b10f59d7a4f94697d7419ec3e06ae, type: 3}
       propertyPath: waves.Array.data[18].spawnInterval
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4508645636753579161, guid: cb3b10f59d7a4f94697d7419ec3e06ae, type: 3}
       propertyPath: waves.Array.data[19].spawnInterval
