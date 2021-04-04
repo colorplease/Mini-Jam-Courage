@@ -36,11 +36,12 @@ public class Timing : MonoBehaviour
      public AudioSource audioSource;
 
     public AudioClip pog;
+    public AudioClip sans;
     
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 70;
    
       
     }
@@ -89,6 +90,7 @@ public class Timing : MonoBehaviour
             man.SetBool("hit", true);
             StartCoroutine("beatisnon");
                StartCoroutine("beatisnon1");
+               audioSource.PlayOneShot(sans);
             dmg = false;
         }
 
