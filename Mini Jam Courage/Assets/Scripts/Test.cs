@@ -27,7 +27,7 @@ public class Test : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
-        Time.timeScale += 0.04f;
+        Time.timeScale += 0.025f;
         audioSource.pitch += 0.05f; 
         timing1.speed += 0.05f;
         audioSource.Play();
