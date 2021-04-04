@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     public Timing timing1;
 
-    public Between mm1;
+    public Animator shakea;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,17 @@ public class Enemy : MonoBehaviour
           timing1.Ace = false;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Detec")
+        {
+            Destroy(gameObject);
+           timing1.dmg = true;
+        }
+    }
+
+    
 
    
 

@@ -10,6 +10,7 @@ public class Timing : MonoBehaviour
 
     public bool pressed = false;
     public bool pressed1 = false;
+    public bool dmg = false;
 
 
 
@@ -18,6 +19,10 @@ public class Timing : MonoBehaviour
 
 
     public Animator Scythe;
+    public Animator shakea;
+
+    public Animator man;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +67,15 @@ public class Timing : MonoBehaviour
         {
             
         }
+
+        if (dmg == true)
+        {
+            shakea.SetBool("damage", true);
+            man.SetBool("hit", true);
+            StartCoroutine("beatisnon");
+               StartCoroutine("beatisnon1");
+            dmg = false;
+        }
     }
 
     IEnumerator Cool()
@@ -82,6 +96,20 @@ public class Timing : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         pressed1 = false;
         Scythe.SetBool("pressright", false);
+    }
+
+    IEnumerator beatisnon()
+    {
+        yield return new WaitForSeconds(0.1f);
+        shakea.SetBool("damage", false);
+        
+    }
+
+    IEnumerator beatisnon1()
+    {
+        yield return new WaitForSeconds(0.2f);
+        man.SetBool("hit", false);
+        
     }
 
     void OnTriggerStay2D(Collider2D other)
