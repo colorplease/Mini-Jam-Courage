@@ -41,6 +41,7 @@ public class Timing : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+   
       
     }
 
@@ -137,6 +138,9 @@ public class Timing : MonoBehaviour
         man.SetBool("hit", false);
         
     }
+
+   
+
 
     
 

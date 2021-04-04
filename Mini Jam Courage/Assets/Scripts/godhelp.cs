@@ -21,7 +21,7 @@ public class godhelp : MonoBehaviour
 
     IEnumerator gaming()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         sounds.SetActive(true);
     }
 }
