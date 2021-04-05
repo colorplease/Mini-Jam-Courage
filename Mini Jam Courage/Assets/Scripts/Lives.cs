@@ -15,7 +15,7 @@ public class Lives : MonoBehaviour
     {
         if(livesAmount == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         life.text = "Lives:" + livesAmount.ToString();
     }

@@ -26,13 +26,13 @@ public class Menu : MonoBehaviour
     {
         animator.SetBool("audio", true);
         yield return new WaitForSeconds(2f);
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator gaming()
     {
         animator.SetBool("audio", true);
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
