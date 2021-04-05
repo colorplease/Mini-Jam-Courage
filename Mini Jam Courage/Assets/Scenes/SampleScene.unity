@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: {fileID: 873392666}
-  livesAmount: 3
+  livesAmount: 10
 --- !u!4 &1361164978
 Transform:
   m_ObjectHideFlags: 0
@@ -1497,12 +1497,19 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 1073677713192646109, guid: 9980a9c1d4ecc2d47a544d6b636c97f3, type: 3}
     spawnInterval: 0.3
-    timeBtwWave: 5
+    timeBtwWave: 2
     speed3: 0
   - waveName: 
     NoOfEnemies: 3
     typeOfEnemies:
     - {fileID: 1835316670962670793, guid: 3280a9c23f7d603459164970ad87cbaf, type: 3}
+    spawnInterval: 0.3
+    timeBtwWave: 2
+    speed3: 0
+  - waveName: 
+    NoOfEnemies: 3
+    typeOfEnemies:
+    - {fileID: 1073677713192646109, guid: 9980a9c1d4ecc2d47a544d6b636c97f3, type: 3}
     spawnInterval: 0.3
     timeBtwWave: 5
     speed3: 0
