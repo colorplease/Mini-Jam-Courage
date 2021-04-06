@@ -7,6 +7,11 @@ public class Menu : MonoBehaviour
 {
 
     public Animator animator;
+    public Animator text;
+    public Animator blob;
+    public Animator tri;
+    public Animator ghost;
+    public Animator black;
 
     public GameObject godhimself;
 
@@ -18,6 +23,12 @@ public class Menu : MonoBehaviour
     public GameObject Credits2;
 
     public GameObject hmf;
+    public GameObject sans;
+
+    void Start()
+    {
+         StartCoroutine(alongisde());
+    }
     public void StartGame()
     {
         StartCoroutine(gamers());
@@ -57,14 +68,27 @@ public class Menu : MonoBehaviour
         wegot2.SetActive(true);
         wegot3.SetActive(true);
         wegot4.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
+        text.SetBool("DJ", true);
+        blob.SetBool("hm", true);
+        ghost.SetBool("more", true);
+        tri.SetBool("help", true);
+         yield return new WaitForSeconds(1f);
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator gaming()
     {
         animator.SetBool("audio", true);
+        sans.SetActive(true);
+        text.SetBool("m", true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    IEnumerator alongisde()
+    {
+        yield return new WaitForSeconds(0.8f);
+        sans.SetActive(false);
     }
 }
